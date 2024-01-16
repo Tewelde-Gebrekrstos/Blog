@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %} {% endblock %}</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  .truncate-mul {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Number of lines to show before truncating */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body class="bg-gray-50">
+    <header class='shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] sticky top-0 z-10 '>
+        <div class='flex flex-wrap items-center  gap-5 relative'>
+          <a href="/home">SHORTNEWS
+          </a>
+          <div class='flex lg:order-1  max-sm:ml-auto '>
+            <!-- <button
+              class='px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]'>Login</button>
+            <button
+              class='px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff] ml-3'>Sign
+              up</button> -->
+            <button id="toggle" class='lg:hidden ml-7'>
+              <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <ul id="collapseMenu" class='lg:!flex lg:space-x-5 max-lg:space-y-2 max-lg:hidden max-lg:py-4 max-lg:w-full '>
+            <li class='max-lg:border-b max-lg:bg-[#007bff] max-lg:py-2 px-3 max-lg:rounded'>
+              <a href='/home'
+                class='lg:hover:text-[#007bff] text-gray-500 max-lg:text-white block font-semibold text-[15px]'>Home</a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'><a href='/news'
+                class='lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px] '>News</a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'><a href='/sports'
+                class='lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Sport</a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'><a href='/politics'
+                class='lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Politics</a>
+            </li>
+            <li class='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'><a href='/bussines'
+                class='lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Bussiness</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+{% block content %}
+{% endblock %}
+
+<div class="bg-gray-200 py-5 px-4 text-center ">
+  <p class='text-black text-sm'>© 2023<a href='#' target='_self'
+    class="hover:underline mx-1">SHORTNEWS</a>All Rights Reserved</p>
+</div>    
+</body>
+</html>    
+<script>
+    var toggleBtn = document.getElementById('toggle');
+    var collapseMenu = document.getElementById('collapseMenu');
+
+    function handleClick() {
+      if (collapseMenu.style.display === 'block') {
+        collapseMenu.style.display = 'none';
+      } else {
+        collapseMenu.style.display = 'block';
+      }
+    }
+
+    toggleBtn.addEventListener('click', handleClick);
+  </script>

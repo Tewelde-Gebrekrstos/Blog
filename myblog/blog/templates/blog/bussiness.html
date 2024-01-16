@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}
+  Bussiness
+{% endblock %}
+
+
+{% block content %}
+<div class="grid md:grid-cols-3">
+    {% for post in posts %}
+    <div
+      class="bg-white shadow-[0_2px_18px_-6px_rgba(0,0,0,0.2)] w-[90%]  mt-12  overflow-hidden mx-auto font-[sans-serif] ">
+      <img src="{{post.image}}" class="w-[80%] h-[200px] items-center mx-auto" />
+      <div class="px-8 py-6 ">
+        <a href="/news/detail/{{post.id}}">
+        <h3 class="text-[#333] text-xl font-bold">{{post.title}}</h3></a>
+         <p class="text-md text-gray-400 "><b class="text-black">Author:</b>{{post.author.name}}</p>
+        <p class="text-md text-gray-400"><b class=" text-black"> Posted Date:</b>{{post.published_date}}</p>
+        <p class=" truncate-mul mt-4 text-md text-gray-500">{{post.content}}</p>
+        <a href="/news/detail/{{post.id}}">
+        <button type="button"
+          class="px-6 py-2.5 mt-6 rounded text-white 
+          text-sm tracking-wider font-semibold border-none outline-none bg-blue-600 
+          hover:bg-blue-700 active:bg-blue-600">Read More</button></a>
+      </div>
+    </div>
+    
+    {% endfor %}
+    </div>
+{% endblock %}
