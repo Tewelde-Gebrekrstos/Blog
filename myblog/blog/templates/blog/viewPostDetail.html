@@ -7,14 +7,14 @@
 
 
 {% block content %}
-<div class="bg-gray-100 p-8 font-[sans-serif]">
+<div class="bg-gray-100 p-2 md:p-8 font-[sans-serif]">
     <div class="bg-white rounded-lg shadow w-[85%] mx-auto">
         {% if post  %}
       <div class="p-6 border-b border-gray-300">
-        <img src="{{post.image.url}}" class="w-[80%] h-[400px] items-center mx-auto" />
+        <img src="{{post.image.url}}" class="w-[80%] md:h-[400px] items-center mx-auto" />
       </div>
-      <div class="grid   p-6">
-        <div class="px-8 py-6 ">
+      <div class="grid  p-2 md:p-6">
+        <div class=" px-1 md:px-8 py-6 ">
             <h3 class="text-[#333] text-xl font-bold">{{post.title}}</h3>
              <p class="text-md text-gray-400 "><b class="text-black">Author:</b>{{post.author.name}}</p>
             <p class="text-md text-gray-400"><b class=" text-black"> Posted Date:</b>{{post.published_date}}</p>
